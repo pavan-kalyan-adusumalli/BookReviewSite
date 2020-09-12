@@ -1,0 +1,29 @@
+{%extends "layout.html"%}
+
+{%block title%}Book review site | search{%endblock%}
+
+{%block menu%}
+<h4>Project1:Books</h4>
+{{username}}<hr>
+<a href="{{url_for('logout')}}">Logout</a>
+{%endblock%}
+
+{%block bottom%}
+    <br>
+    <div id="search" class="shadow p-3 mb-5 bg-white rounded">
+        <h1>search for a book!</h1>
+        <form action="{{url_for('results')}}" method="POST">
+            <div class="form-group">
+                <input type="text" name="bookname" placeholder="ISBN no., Title, Author" autofocus>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Search</button>
+            </div>
+            
+        </form>
+        <small>
+            You can search by a book's ISBN number, Title, or Author <br>
+            EX: search by 8129115301 or Two States or Chetan Bhagat
+        </small>
+    </div>
+{%endblock%}
