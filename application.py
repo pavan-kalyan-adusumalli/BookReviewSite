@@ -153,3 +153,7 @@ def api_get(isbnno):
     result = dict(tmp.items())
     result['average_score'] = float('%.2f'%(result['average_score']))
     return(jsonify(result))
+
+if __name__ == '__main__':
+    app.run()
+
